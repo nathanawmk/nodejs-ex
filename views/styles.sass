@@ -1,0 +1,359 @@
+@import '../node_modules/@allianz/ndbx-styles/dist/patternlab.min.css'
+@import '../node_modules/@angular/cdk/overlay-prebuilt.css'
+@import './assets/libs/paginated-table/index.css'
+@import './assets/libs/paginated-table/material.css'
+@import './assets/libs/paginated-table/icons.css'
+@import './app/admin/shared/admin.sass'
+
+body
+  overflow: auto
+
+  app-root
+    display: block
+
+radio-inline input[type="radio"]
+  visibility: hidden !important
+
+// policy details
+.policy-details-content
+  h2, h3
+    margin: 0
+    padding: 8px
+
+  h2
+    font-size: 23px
+
+  h3
+    font-size: 20px
+
+  p
+    margin: 0
+    padding: 8px
+
+  p.center
+    text-align: center
+
+  .data-not-found
+    text-align: center
+    font-weight: bold
+    border-top: 1px solid #ccc
+
+.viewport-desktop, .viewport-mobile
+  table
+    width: 100%
+    border-collapse: collapse
+
+    th, td
+      text-align: left
+      vertical-align: top !important
+
+// policy details' responsive table
+table.responsive
+  th, td
+    padding: 8px
+    box-sizing: border-box
+
+  th
+    font-family: proxima-bold, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-weight: bold
+
+  th[colspan]
+    font-family: proxima-regular, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-weight: 400
+
+  td[colspan].center
+    text-align: center
+
+  &:not(:last-of-type)
+    margin-bottom: 2em
+
+@media (min-width: 769px)
+  table.responsive
+    tr:hover
+      background-color: rgba(0, 0, 0, .0125)
+
+    th
+      width: 33.33333333%
+
+    th[colspan]
+      width: auto
+
+    td
+      width: 66.66666666%
+      padding-left: 1em
+
+@media (max-width: 768px)
+  table.responsive
+    tr
+      display: flex
+      flex-direction: column
+      padding-bottom: 14px
+
+    th
+      padding-bottom: 4px
+
+    th[colspan]
+      padding-bottom: 0px
+
+    td
+      padding-top: 4px
+
+.capitalize
+  text-transform: capitalize
+
+.data-table-filter
+  width: 100%
+  display: table
+  margin-bottom: 1em
+
+  .form-row
+    display: table-row
+
+  .form-label
+    display: table-cell
+    padding-right: 1em
+    width: 1em
+    white-space: nowrap
+
+  .form-value
+    display: table-cell
+    padding-bottom: 1em
+
+  .form-row-button
+    padding-bottom: 1em
+
+  .form-row-buttons
+    width: 100%
+    text-align: right
+
+  input
+    border: none
+    border-bottom: 1px solid #666
+    width: 100%
+    background-color: transparent
+
+  .form-row-radio
+    display: flex
+
+    input
+      width: auto
+      margin-right: .5em
+
+    label
+      cursor: pointer
+
+.viewport-desktop table th[rowspan], .viewport-mobile table th[rowspan]
+  vertical-align: middle !important
+
+table.table-striped
+  tbody
+    tr.table-sub-header
+      th
+        background-color: #f0f0f0
+        border-bottom: 1px solid #e0e0e0
+        font-weight: bold
+
+    tr.table-sub-section
+      td:first-child
+        padding-left: 2.5em
+
+table.table-compact
+  .tabular-nums
+    font-variant-numeric: tabular-nums
+    text-align: right
+
+  thead
+    tr
+      th
+        padding: 5px 10px
+        font-weight: bold
+
+        &[colspan]
+          border-bottom-color: #dedede
+          text-align: center
+
+  tbody
+    tr
+      td
+        padding: 5px 10px
+
+table.table-compact.table-compact-extra
+  th, td
+    padding: 5px 4px
+    font-size: 12px
+
+.list-selectable
+  position: relative
+
+  div
+    display: flex
+    border-bottom: 1px solid #666
+    cursor: pointer
+
+    span
+      line-height: 24px
+      padding-right: 1em
+      flex: 1
+
+  ul
+    background-color: #fff
+    position: absolute
+    z-index: 99
+    top: 25px
+    width: 100%
+    list-style: none
+    margin: 0
+    padding: 0
+    height: 0
+    overflow: hidden
+    opacity: 0
+    transition: all 0.5s ease
+    border: 1px solid #ccc
+    box-shadow: 1px 2px -1px rgba(0, 0, 0, .25)
+
+    &.active
+      height: auto
+      opacity: 1
+
+    li
+      cursor: pointer
+      padding: 1px 12px
+
+      &:hover
+        background-color: #eee
+
+      &:after
+        display: inline-block
+        content: '\2714'
+        font-family: sans-serif
+        font-size: 12px
+        line-height: 18px
+        margin-left: 8px
+        opacity: 0
+
+      &.active:after
+        opacity: 1
+
+.load
+  transition: all 500ms ease-in
+
+  &.ing
+    overflow: hidden
+    opacity: 0
+    height: 0
+
+  &.ed
+    opacity: 1
+    height: auto
+
+.disclaimer
+  font-size: 12px
+  color: #808080
+
+nav.c-breadcrumb
+  margin: 14px 0 14px 0
+
+  ul
+    padding-left: 0
+
+.nx-dropdown-results__option
+  font-size: 14px !important
+
+.nx-switcher__label
+  font-size: 16px !important
+
+.nx-popover__close-icon
+  visibility: hidden !important
+
+.header-top .navbar-nav .dropdown-user
+  padding-top: 5px !important
+
+.header-top .navbar-nav
+  padding: 15px 15px 0px 0px !important
+
+.translation
+  display: none
+
+.blue-font
+  color: #0079b5
+
+.badge
+  padding: 5px
+  min-width: 50px
+  margin: 0 5px
+  font-weight: bold
+  text-transform: uppercase
+
+.badge-success
+  color: #fff
+  background-color: #4caf50
+  border-color: #4caf50
+
+.badge-danger
+  color: #fff
+  background-color: #f44336
+  border-color: #f44336
+
+.badge-primary
+  color: #fff
+  background-color: #0a68b4
+  border-color: #08528d
+
+.margin-top-bottom-5
+  margin-top: 5px
+  margin-bottom: 5px
+
+.margin-top-bottom-10
+  margin-top: 10px
+  margin-bottom: 10px
+
+.margin-top-bottom-15
+  margin-top: 15px
+  margin-bottom: 15px
+
+.margin-top-bottom-20
+  margin-top: 20px
+  margin-bottom: 20px
+
+.margin-top-bottom-30
+  margin-top: 30px
+  margin-bottom: 30px
+
+.margin-top-bottom-40
+  margin-top: 40px
+  margin-bottom: 40px
+
+.margin-top-bottom-50
+  margin-top: 50px
+  margin-bottom: 50px
+
+// Update Fatca CRS
+div.nx-expansion-panel__header-content
+  padding: 10px 32px !important
+
+// Copied from NDBX v.7.2.0-beta.0
+
+.ndbx-card
+  width: 100%
+  background: #fff
+  border: 1px solid #d9d9d9
+  border-radius: 4px
+  box-shadow: none
+  display: inline-block
+  padding: 15px 30px
+  transition: background-color .2s ease, box-shadow .2s ease
+  word-wrap: break-word
+
+.ndbx-card > h3.nx-heading
+  font-weight: 600
+  font-size: 20px
+  line-height: 28px
+  letter-spacing: .2px
+  margin-top: 0px
+  margin-bottom: 10px
+
+.ndbx-card > p
+  font-size: 16px
+  line-height: 24px
+  letter-spacing: .2px
+
